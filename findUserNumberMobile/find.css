@@ -1,0 +1,66 @@
+body {
+	font-size: 30px;
+}
+
+.center {
+	width: 300px;
+	height: 500px;
+	background-color: white;
+	border: solid 5px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+}
+
+.number {
+	text-align: center;
+	font-size: 36px;
+	border-color: 5px red;
+}
+
+.predel {
+	text-align: center;
+}
+
+.btn1, .btn2, .btn3 {
+	width: 70px;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.btn1:hover, .btn2:hover, .btn3:hover {
+    color: red;
+}
+
+.btn1 {
+	position: absolute;
+	left: 10px;
+	top: 85%;
+}
+
+.btn2 {
+	position: absolute;
+	left: 50%;
+	top: 85%;
+	transform: translate(-50%);
+}
+
+.btn3 {
+	position: absolute;
+	right: 10px;
+	top: 85%;
+}
+
+
+
+
