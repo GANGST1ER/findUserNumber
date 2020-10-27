@@ -6,20 +6,22 @@ const number = document.querySelector(".number"),
 	  btnMore = buttons[2];
 
 let max = 1000,
-	mid = Math.floor(max / 2),
-	min = 0,
-	counter = 0;
+	mid = Math.floor(max / 2), // рандом Math.floor(Math.random() * max)
+	min = 2,
+	counter = 1;
 
 number.innerHTML = mid;
 
 btnLess.addEventListener("click", () => {
-	max = mid - 1;
-	mid = Math.floor((max + min) / 2);
-	number.innerHTML = mid;
-	counter++;
-	console.log(min);
-	console.log(mid);
-	console.log(max);
+	if ((mid - 1) >= Math.floor(((mid - 1) + min) / 2)) {
+		max = mid - 1;
+		mid = Math.floor((max + min) / 2);
+		number.innerHTML = mid;
+		counter++;
+		console.log(min);
+		console.log(mid);
+		console.log(max);
+	}
 });
 
 btnWin.addEventListener("click", () => {
@@ -27,19 +29,21 @@ btnWin.addEventListener("click", () => {
 		win.innerHTML = `УГАДАЛ ЗА <br>${counter} ${createWordEnd(counter)}`;
 		max = 1000;
 		mid = Math.floor(max / 2);
-		min = 0;
-		counter = 0;
+		min = 2;
+		counter = 1;
 	}
 });
 
 btnMore.addEventListener("click", () => {
-	min = mid + 1;
-	mid = Math.floor((max + min) / 2);
-	number.innerHTML = mid;
-	counter++;
-	console.log(min);
-	console.log(mid);
-	console.log(max);
+	if ((mid + 1) <= Math.floor((max + (mid + 1)) / 2)) {
+		min = mid + 1;
+		mid = Math.floor((max + min) / 2);
+		number.innerHTML = mid;
+		counter++;
+		console.log(min);
+		console.log(mid);
+		console.log(max);
+	}
 });
 
 const tries = ["ПОПЫТКУ", "ПОПЫТКИ", "ПОПЫТОК"],
@@ -56,4 +60,3 @@ function createWordEnd(count) {
         return tries[2]
     }
 }
-    
