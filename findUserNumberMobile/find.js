@@ -27,12 +27,15 @@ btnLess.addEventListener("click", () => {
 });
 
 btnWin.addEventListener("click", () => {
-	if (counter > 0) {
+	if (counter > 0 && win.innerHTML != `УГАДАЛ ЗА <br>${counter} ${createWordEnd(counter)}`) {
 		win.innerHTML = `УГАДАЛ ЗА <br>${counter} ${createWordEnd(counter)}`;
-		max = 1000;
-		mid = Math.floor(max / 2);
-		min = 2;
-		counter = 1;
+		// max = 1000;
+		// mid = Math.floor(max / 2);
+		// min = 2;
+		// counter = 1;
+		btnWin.innerHTML = "again"
+	} else {
+		window.location.reload();
 	}
 });
 
