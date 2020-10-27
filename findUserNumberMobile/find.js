@@ -10,6 +10,8 @@ let max = 1000,
 	min = 2,
 	counter = 1;
 
+localStorage.clear();
+
 number.innerHTML = mid;
 
 btnLess.addEventListener("click", () => {
